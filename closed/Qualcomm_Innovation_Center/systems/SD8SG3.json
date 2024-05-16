@@ -1,0 +1,21 @@
+{
+        "system": {
+                "Processor Name": "Qualcomm Snapdragon 8s Gen 3 Mobile Platform",
+                "CPU_Type_1": "1x Qualcomm Kryo(TM) Prime Core: up to 3.0 Ghz",
+                "CPU_Type_2": "4x Qualcomm Kryo(TM) Performance Cores: up to 2.8 Ghz",
+                "CPU_Type_3": "3x Qualcomm Kryo(TM) Efficiency Cores: up to 2.01 Ghz",
+                "Graphics": "Qualcomm Adreno(TM) GPU",
+                "Accelerator type": "Qualcomm Hexagon(TM) NPU",
+                "DRAM": "2xLPDDr5 8+3GB"
+        },
+        "notes": {
+                "Phone summary": "Qualcomm Reference Design",
+                "SoC Product information": "Qualcomm Snapdragon 8s Gen 3 Mobile Platform"
+        },
+        "software": {
+                "OS Version": "Android 14",
+                "TFlite Version": "2.14.0",
+                "TFLite delegate types": "none",
+                "Vendor SDK": "Qualcomm AI Stack -- Qualcomm Neural Processing SDK v2.20.0"
+        }
+}

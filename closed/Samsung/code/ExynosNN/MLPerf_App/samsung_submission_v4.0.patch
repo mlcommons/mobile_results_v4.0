@@ -1,0 +1,193 @@
+diff --git a/mobile_back_samsung/samsung/lib/checksums.txt b/mobile_back_samsung/samsung/lib/checksums.txt
+index 28f8b51..68f158a 100644
+--- a/mobile_back_samsung/samsung/lib/checksums.txt
++++ b/mobile_back_samsung/samsung/lib/checksums.txt
+@@ -1,10 +1,10 @@
+ e2f78216c1a3e0d925e17e4d6e7befbc1a2a853867864c6f30e553bf971f2a42  internal/libc++.so
+ 34ce517c63720a6a858d4e0237247a4e6db857cc4a1f6dffe7210916b96fdc3b  internal/libeden_nn_on_system.so
+-f8a6c9d5c0e094c8ef84468ee535ff2f4604d9e59064925aa38cfdd200a06392  internal/libenn_extension.so
++f459d2b74a2330b938ea163037c5c5f896a97c1b3a7c1454051246bdab766e5c  internal/libenn_extension.so
+ 97202acb183aa26d83f393d185f0f3cd94f648678916c6b27d91a8445f354472  internal/libenn_public_api_cpp.so
+-fb881d8f1b99987582ef8775cad62054b5289de6e04af3a3f8627f862a8c1bbc  internal/libmbe1200_core.so
+-ddb0a5c04531ba04afb5acecdd52a2eb7ed639fc974afa0427bf552276c1d293  internal/libmbe2100_core.so
+-884076c35d8184810bc56348452e0960835ecbaccac2cc389f2903b9056a4568  internal/libmbe2200_core.so
+-9a8a2fba7ed8b58608cf4b68c68d48bdc6b717eec7289b73f0030a2b538dd9a1  internal/libmbe2300_core.so
+-97ef20bd09baebdbd2bd22209f51706c572707b31bb2d7e3418b52146dbf6b03  internal/libmbe2400_core.so
+-cc921615cd844b47871646b30f146048044b55cdb9bf17d3bd9c5f4569ec2efe  internal/libofi_rt_framework_user_vendor.so
+\ No newline at end of file
++dcceb8e44f81a35a83395e409db552dcd0a47cde995efaa8bf5bca909a06de7e  internal/libmbe1200_core.so
++9dde45ef30ee995840491e85320757abf680139714f0be88a713b23eec5e0dd9  internal/libmbe2100_core.so
++8f6c17efda5beecb999cfbcb11b73d3c7c9593e695b1dcc0ff6b37f56b5147ae  internal/libmbe2200_core.so
++c27b9414873fba13c500cacbfd08f6a9112b0e7c8f9cdf1d1d321f0c9d2fee1d  internal/libmbe2300_core.so
++cf5fd2dd19c10acc1703e1084b6a46abb9b04984ac41c774ee58e04fd6be3972  internal/libmbe2400_core.so
++cc921615cd844b47871646b30f146048044b55cdb9bf17d3bd9c5f4569ec2efe  internal/libofi_rt_framework_user_vendor.so
+diff --git a/mobile_back_samsung/samsung/lib/public/include/mbe_config_2400.pbtxt b/mobile_back_samsung/samsung/lib/public/include/mbe_config_2400.pbtxt
+index 8a004fc..e180658 100644
+--- a/mobile_back_samsung/samsung/lib/public/include/mbe_config_2400.pbtxt
++++ b/mobile_back_samsung/samsung/lib/public/include/mbe_config_2400.pbtxt
+@@ -37,13 +37,47 @@ benchmark_setting {
+       id: "lazy_mode"
+       value: "true"
+     }
+-    model_path: "https://github.com/mlcommons/mobile_models/raw/main/v3_1/samsung/ic.nnc"
+-    model_checksum: "1756e790704bea5be37431877a196ea1"
++    model_path: "local:///MLPerf_sideload/ic.nnc"
++    model_checksum: "1a84db0b3dc40a6e217b7f2c8eb2980b"
+   }
+   delegate_selected: "ENN_NPU"
+   single_stream_expected_latency_ns: 200000
+ }
+ 
++benchmark_setting {
++  benchmark_id: "image_classification_v2"
++  framework: "ENN"
++  delegate_choice: {
++    delegate_name: "ENN_NPU"
++    accelerator_name: "samsung_npu"
++    accelerator_desc: "NPU"
++    custom_setting {
++      id: "preset"
++      value: "1005"
++    }
++    custom_setting {
++      id: "i_type"
++      value: "Uint8"
++    }
++    custom_setting {
++      id: "o_type"
++      value: "Float32"
++    }
++    custom_setting {
++      id: "extension"
++      value: "true"
++    }
++    custom_setting {
++      id: "lazy_mode"
++      value: "true"
++    }
++    model_path: "local:///MLPerf_sideload/mnv4_large.nnc"
++    model_checksum: "4a4a6b332ebcabc1a06eca019a1d7d0c"
++  }
++  delegate_selected: "ENN_NPU"
++  single_stream_expected_latency_ns: 1000000
++}
++
+ benchmark_setting {
+   benchmark_id: "image_segmentation_v2"
+   framework: "ENN"
+@@ -71,11 +105,11 @@ benchmark_setting {
+       id: "lazy_mode"
+       value: "true"
+     }
+-    model_path: "https://github.com/mlcommons/mobile_models/raw/main/v3_1/samsung/sm_uint8.nnc"
+-    model_checksum: "c58979294a01c1a8b7306cbf213ffd42"
++    model_path: "local:///MLPerf_sideload/sm_uint8.nnc"
++    model_checksum: "b02531ae19686c6574857bb18406966c"
+   }
+   delegate_selected: "ENN_NPU"
+-  single_stream_expected_latency_ns: 500000
++  single_stream_expected_latency_ns: 1000000
+ }
+ 
+ benchmark_setting {
+@@ -105,8 +139,8 @@ benchmark_setting {
+       id: "lazy_mode"
+       value: "true"
+     }
+-    model_path: "https://github.com/mlcommons/mobile_models/raw/main/v3_1/samsung/od.nnc"
+-    model_checksum: "6ec9c58af2b1cd772fb45ac51db07c31"
++    model_path: "local:///MLPerf_sideload/od.nnc"
++    model_checksum: "5e7abcc8fa6f7c3e0bd8955a9ef1e8cb"
+   }
+   delegate_selected: "ENN_NPU"
+   single_stream_expected_latency_ns: 450000
+@@ -121,7 +155,7 @@ benchmark_setting {
+     accelerator_desc: "NPU"
+     custom_setting {
+       id: "preset"
+-      value: "100005"
++      value: "1005"
+     }
+     custom_setting {
+       id: "i_type"
+@@ -139,11 +173,11 @@ benchmark_setting {
+       id: "lazy_mode"
+       value: "true"
+     }
+-    model_path: "https://github.com/mlcommons/mobile_models/raw/main/v3_1/samsung/sr.nnc"
+-    model_checksum: "2542bd74108b286822fcd1fc4b8bc316"
++    model_path: "local:///MLPerf_sideload/sr.nnc"
++    model_checksum: "3fea2aa73be65efceb783364f4d7ae8d"
+   }
+   delegate_selected: "ENN_NPU"
+-  single_stream_expected_latency_ns: 990000
++  single_stream_expected_latency_ns: 1000000
+ }
+ 
+ benchmark_setting {
+@@ -173,11 +207,11 @@ benchmark_setting {
+       id: "lazy_mode"
+       value: "true"
+     }
+-    model_path: "https://github.com/mlcommons/mobile_models/raw/main/v3_1/samsung/mobile_bert.nnc"
+-    model_checksum: "82dee62592db68a095396da3caacf67b"
++    model_path: "local:///MLPerf_sideload/mobile_bert.nnc"
++    model_checksum: "59356d4fa598d2d4369ca43f2051aff2"
+   }
+   delegate_selected: "ENN_NPU"
+-  single_stream_expected_latency_ns: 990000
++  single_stream_expected_latency_ns: 1000000
+ }
+ 
+ benchmark_setting {
+@@ -212,8 +246,48 @@ benchmark_setting {
+       id: "lazy_mode"
+       value: "false"
+     }
+-    model_path: "https://github.com/mlcommons/mobile_models/raw/main/v3_1/samsung/ic_offline.nnc"
+-    model_checksum: "0c4c08850eb790dcaa7c77cc352dbfc1"
++    model_path: "local:///MLPerf_sideload/ic_offline.nnc"
++    model_checksum: "9fcba01bf828b5cb5b1a39b55a8a7ed9"
++  }
++  delegate_selected: "ENN_NPU"
++
++  single_stream_expected_latency_ns: 140000
++}
++
++benchmark_setting {
++  benchmark_id: "image_classification_offline_v2"
++  framework: "ENN"
++  delegate_choice: {
++    delegate_name: "ENN_NPU"
++    accelerator_name: "samsung_npu"
++    accelerator_desc: "npu"
++    batch_size: 6144
++    custom_setting {
++      id: "scenario"
++      value: "offline"
++    }
++    custom_setting {
++      id: "preset"
++      value: "1003"
++    }
++    custom_setting {
++      id: "i_type"
++      value: "Uint8"
++    }
++    custom_setting {
++      id: "o_type"
++      value: "Float32"
++    }
++    custom_setting {
++      id: "extension"
++      value: "false"
++    }
++    custom_setting {
++      id: "lazy_mode"
++      value: "false"
++    }
++    model_path: "local:///MLPerf_sideload/mnv4_large_offline.nnc"
++    model_checksum: "eec18f3bcca9d34f15ff73b73b7b0a2f"
+   }
+   delegate_selected: "ENN_NPU"
+ 

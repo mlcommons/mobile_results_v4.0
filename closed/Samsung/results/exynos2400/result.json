@@ -1,0 +1,770 @@
+{
+  "meta": {
+    "uuid": "57f3b6e9-bc29-46ba-9956-8a3f1abde078",
+    "creation_date": "2024-04-05T17:09:18.328522",
+    "upload_date": null
+  },
+  "results": [
+    {
+      "benchmark_id": "image_classification_v2",
+      "benchmark_name": "Image Classification v2",
+      "loadgen_scenario": "SingleStream",
+      "backend_settings": {
+        "accelerator_code": "samsung_npu",
+        "accelerator_desc": "NPU",
+        "framework": "ENN",
+        "delegate": "ENN_NPU",
+        "model_path": "local:///MLPerf_sideload/mnv4_large.nnc",
+        "batch_size": 1,
+        "extra_settings": [
+          {
+            "id": "num_threads",
+            "name": "Number of threads",
+            "value": "4",
+            "value_name": "4 threads"
+          },
+          {
+            "id": "preset",
+            "name": "",
+            "value": "1005",
+            "value_name": ""
+          },
+          {
+            "id": "i_type",
+            "name": "",
+            "value": "Uint8",
+            "value_name": ""
+          },
+          {
+            "id": "o_type",
+            "name": "",
+            "value": "Float32",
+            "value_name": ""
+          },
+          {
+            "id": "extension",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          },
+          {
+            "id": "lazy_mode",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          }
+        ]
+      },
+      "backend_info": {
+        "filename": "libsamsungbackend",
+        "vendor_name": "samsung",
+        "backend_name": "samsung",
+        "accelerator_name": "samsung npu"
+      },
+      "performance_run": {
+        "throughput": {
+          "value": 964.2550647497276
+        },
+        "accuracy": null,
+        "accuracy2": null,
+        "dataset": {
+          "name": "Open images subset for classification",
+          "type": "IMAGENET",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v0_7/datasets/imagenet.zip",
+          "groundtruth_path": ""
+        },
+        "measured_duration": 61.16763687133789,
+        "measured_samples": 58106,
+        "start_datetime": "2024-04-05T15:46:11.665014",
+        "loadgen": {
+          "query_count": 58106,
+          "latency_mean": 0.001031828,
+          "latency90": 0.00103707,
+          "is_min_duration_met": true,
+          "is_min_query_met": true,
+          "is_early_stopping_met": true,
+          "is_result_valid": true
+        }
+      },
+      "accuracy_run": {
+        "throughput": null,
+        "accuracy": {
+          "normalized": 0.815559983253479,
+          "formatted": "81.56%"
+        },
+        "accuracy2": null,
+        "dataset": {
+          "name": "Imagenet classification validation set",
+          "type": "IMAGENET",
+          "data_path": "local:///mlperf_datasets/imagenet/img",
+          "groundtruth_path": "local:///mlperf_datasets/imagenet/imagenet_val_full.txt"
+        },
+        "measured_duration": 634.0106201171875,
+        "measured_samples": 50000,
+        "start_datetime": "2024-04-05T16:27:55.160977",
+        "loadgen": null
+      },
+      "min_duration": 60.0,
+      "min_samples": 1024
+    },
+    {
+      "benchmark_id": "object_detection",
+      "benchmark_name": "Object Detection",
+      "loadgen_scenario": "SingleStream",
+      "backend_settings": {
+        "accelerator_code": "samsung_npu",
+        "accelerator_desc": "NPU",
+        "framework": "ENN",
+        "delegate": "ENN_NPU",
+        "model_path": "local:///MLPerf_sideload/od.nnc",
+        "batch_size": 1,
+        "extra_settings": [
+          {
+            "id": "num_threads",
+            "name": "Number of threads",
+            "value": "4",
+            "value_name": "4 threads"
+          },
+          {
+            "id": "preset",
+            "name": "",
+            "value": "1005",
+            "value_name": ""
+          },
+          {
+            "id": "i_type",
+            "name": "",
+            "value": "Uint8",
+            "value_name": ""
+          },
+          {
+            "id": "o_type",
+            "name": "",
+            "value": "Float32",
+            "value_name": ""
+          },
+          {
+            "id": "extension",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          },
+          {
+            "id": "lazy_mode",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          }
+        ]
+      },
+      "backend_info": {
+        "filename": "libsamsungbackend",
+        "vendor_name": "samsung",
+        "backend_name": "samsung",
+        "accelerator_name": "samsung npu"
+      },
+      "performance_run": {
+        "throughput": {
+          "value": 2207.0865133771513
+        },
+        "accuracy": null,
+        "accuracy2": null,
+        "dataset": {
+          "name": "Open images subset for detection",
+          "type": "COCO",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v0_7/datasets/coco.zip",
+          "groundtruth_path": ""
+        },
+        "measured_duration": 61.01696014404297,
+        "measured_samples": 133585,
+        "start_datetime": "2024-04-05T15:52:14.127784",
+        "loadgen": {
+          "query_count": 133585,
+          "latency_mean": 0.000448459,
+          "latency90": 0.000453086,
+          "is_min_duration_met": true,
+          "is_min_query_met": true,
+          "is_early_stopping_met": true,
+          "is_result_valid": true
+        }
+      },
+      "accuracy_run": {
+        "throughput": null,
+        "accuracy": {
+          "normalized": 0.27105212211608887,
+          "formatted": "0.2711 mAP"
+        },
+        "accuracy2": null,
+        "dataset": {
+          "name": "COCO 2017 validation set",
+          "type": "COCO",
+          "data_path": "local:///mlperf_datasets/coco/img",
+          "groundtruth_path": "local:///mlperf_datasets/coco/coco_val_full.pbtxt"
+        },
+        "measured_duration": 46.82255935668945,
+        "measured_samples": 5000,
+        "start_datetime": "2024-04-05T16:38:36.159043",
+        "loadgen": null
+      },
+      "min_duration": 60.0,
+      "min_samples": 1024
+    },
+    {
+      "benchmark_id": "image_segmentation_v2",
+      "benchmark_name": "Image Segmentation v2",
+      "loadgen_scenario": "SingleStream",
+      "backend_settings": {
+        "accelerator_code": "samsung_npu",
+        "accelerator_desc": "NPU",
+        "framework": "ENN",
+        "delegate": "ENN_NPU",
+        "model_path": "local:///MLPerf_sideload/sm_uint8.nnc",
+        "batch_size": 1,
+        "extra_settings": [
+          {
+            "id": "num_threads",
+            "name": "Number of threads",
+            "value": "4",
+            "value_name": "4 threads"
+          },
+          {
+            "id": "preset",
+            "name": "",
+            "value": "1005",
+            "value_name": ""
+          },
+          {
+            "id": "i_type",
+            "name": "",
+            "value": "Uint8",
+            "value_name": ""
+          },
+          {
+            "id": "o_type",
+            "name": "",
+            "value": "Uint8",
+            "value_name": ""
+          },
+          {
+            "id": "extension",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          },
+          {
+            "id": "lazy_mode",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          }
+        ]
+      },
+      "backend_info": {
+        "filename": "libsamsungbackend",
+        "vendor_name": "samsung",
+        "backend_name": "samsung",
+        "accelerator_name": "samsung npu"
+      },
+      "performance_run": {
+        "throughput": {
+          "value": 1420.4081400749692
+        },
+        "accuracy": null,
+        "accuracy2": null,
+        "dataset": {
+          "name": "Open images subset for segmentation",
+          "type": "ADE20K",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v0_7/datasets/ade20k.zip",
+          "groundtruth_path": ""
+        },
+        "measured_duration": 61.303550720214844,
+        "measured_samples": 85428,
+        "start_datetime": "2024-04-05T15:58:16.348247",
+        "loadgen": {
+          "query_count": 85428,
+          "latency_mean": 0.000701634,
+          "latency90": 0.000704023,
+          "is_min_duration_met": true,
+          "is_min_query_met": true,
+          "is_early_stopping_met": true,
+          "is_result_valid": true
+        }
+      },
+      "accuracy_run": {
+        "throughput": null,
+        "accuracy": {
+          "normalized": 0.5743308663368225,
+          "formatted": "0.5743 mIoU"
+        },
+        "accuracy2": null,
+        "dataset": {
+          "name": "ADE20K validation set",
+          "type": "ADE20K",
+          "data_path": "local:///mlperf_datasets/ade20k/images",
+          "groundtruth_path": "local:///mlperf_datasets/ade20k/annotations"
+        },
+        "measured_duration": 34.5771484375,
+        "measured_samples": 2000,
+        "start_datetime": "2024-04-05T16:39:25.983994",
+        "loadgen": null
+      },
+      "min_duration": 60.0,
+      "min_samples": 1024
+    },
+    {
+      "benchmark_id": "natural_language_processing",
+      "benchmark_name": "Language Understanding",
+      "loadgen_scenario": "SingleStream",
+      "backend_settings": {
+        "accelerator_code": "npu",
+        "accelerator_desc": "npu",
+        "framework": "ENN",
+        "delegate": "ENN_NPU",
+        "model_path": "local:///MLPerf_sideload/mobile_bert.nnc",
+        "batch_size": 1,
+        "extra_settings": [
+          {
+            "id": "num_threads",
+            "name": "Number of threads",
+            "value": "4",
+            "value_name": "4 threads"
+          },
+          {
+            "id": "preset",
+            "name": "",
+            "value": "1005",
+            "value_name": ""
+          },
+          {
+            "id": "i_type",
+            "name": "",
+            "value": "Int32",
+            "value_name": ""
+          },
+          {
+            "id": "o_type",
+            "name": "",
+            "value": "Float32",
+            "value_name": ""
+          },
+          {
+            "id": "extension",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          },
+          {
+            "id": "lazy_mode",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          }
+        ]
+      },
+      "backend_info": {
+        "filename": "libsamsungbackend",
+        "vendor_name": "samsung",
+        "backend_name": "samsung",
+        "accelerator_name": "samsung npu"
+      },
+      "performance_run": {
+        "throughput": {
+          "value": 317.11028810421004
+        },
+        "accuracy": null,
+        "accuracy2": null,
+        "dataset": {
+          "name": "Squad V1.1 mini set",
+          "type": "SQUAD",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v1_0/datasets/squad_eval_mini.tfrecord",
+          "groundtruth_path": ""
+        },
+        "measured_duration": 60.15456008911133,
+        "measured_samples": 19042,
+        "start_datetime": "2024-04-05T16:04:18.904684",
+        "loadgen": {
+          "query_count": 19042,
+          "latency_mean": 0.003150494,
+          "latency90": 0.003153477,
+          "is_min_duration_met": true,
+          "is_min_query_met": true,
+          "is_early_stopping_met": true,
+          "is_result_valid": true
+        }
+      },
+      "accuracy_run": {
+        "throughput": null,
+        "accuracy": {
+          "normalized": 0.9435237646102905,
+          "formatted": "94.3524"
+        },
+        "accuracy2": null,
+        "dataset": {
+          "name": "Squad V1.1 validation set",
+          "type": "SQUAD",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v1_0/datasets/squad_eval_mini.tfrecord",
+          "groundtruth_path": "https://github.com/mlcommons/mobile_models/raw/main/v1_0/assets/squad_groundtruth.tfrecord"
+        },
+        "measured_duration": 0.3615042269229889,
+        "measured_samples": 100,
+        "start_datetime": "2024-04-05T16:40:02.143720",
+        "loadgen": null
+      },
+      "min_duration": 60.0,
+      "min_samples": 1024
+    },
+    {
+      "benchmark_id": "super_resolution",
+      "benchmark_name": "Super Resolution ",
+      "loadgen_scenario": "SingleStream",
+      "backend_settings": {
+        "accelerator_code": "samsung_npu",
+        "accelerator_desc": "NPU",
+        "framework": "ENN",
+        "delegate": "ENN_NPU",
+        "model_path": "local:///MLPerf_sideload/sr.nnc",
+        "batch_size": 1,
+        "extra_settings": [
+          {
+            "id": "num_threads",
+            "name": "Number of threads",
+            "value": "4",
+            "value_name": "4 threads"
+          },
+          {
+            "id": "preset",
+            "name": "",
+            "value": "1005",
+            "value_name": ""
+          },
+          {
+            "id": "i_type",
+            "name": "",
+            "value": "Uint8",
+            "value_name": ""
+          },
+          {
+            "id": "o_type",
+            "name": "",
+            "value": "Int8",
+            "value_name": ""
+          },
+          {
+            "id": "extension",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          },
+          {
+            "id": "lazy_mode",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          }
+        ]
+      },
+      "backend_info": {
+        "filename": "libsamsungbackend",
+        "vendor_name": "samsung",
+        "backend_name": "samsung",
+        "accelerator_name": "samsung npu"
+      },
+      "performance_run": {
+        "throughput": {
+          "value": 139.8479153920112
+        },
+        "accuracy": null,
+        "accuracy2": null,
+        "dataset": {
+          "name": "SNUSR dataset for performance test",
+          "type": "SNUSR",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v3_1/datasets/snusr_lr_png.zip",
+          "groundtruth_path": ""
+        },
+        "measured_duration": 60.54304885864258,
+        "measured_samples": 9034,
+        "start_datetime": "2024-04-05T16:10:20.316294",
+        "loadgen": {
+          "query_count": 9034,
+          "latency_mean": 0.00664158,
+          "latency90": 0.007150625,
+          "is_min_duration_met": true,
+          "is_min_query_met": true,
+          "is_early_stopping_met": true,
+          "is_result_valid": true
+        }
+      },
+      "accuracy_run": {
+        "throughput": null,
+        "accuracy": {
+          "normalized": 0.3340059518814087,
+          "formatted": "33.40 dB"
+        },
+        "accuracy2": null,
+        "dataset": {
+          "name": "SNUSR dataset for accuracy test",
+          "type": "SNUSR",
+          "data_path": "local:///mlperf_datasets/snusr/lr",
+          "groundtruth_path": "local:///mlperf_datasets/snusr/hr"
+        },
+        "measured_duration": 2.3901524543762207,
+        "measured_samples": 25,
+        "start_datetime": "2024-04-05T16:40:04.218861",
+        "loadgen": null
+      },
+      "min_duration": 60.0,
+      "min_samples": 1024
+    },
+    {
+      "benchmark_id": "image_classification",
+      "benchmark_name": "Image Classification",
+      "loadgen_scenario": "SingleStream",
+      "backend_settings": {
+        "accelerator_code": "samsung_npu",
+        "accelerator_desc": "NPU",
+        "framework": "ENN",
+        "delegate": "ENN_NPU",
+        "model_path": "local:///MLPerf_sideload/ic.nnc",
+        "batch_size": 1,
+        "extra_settings": [
+          {
+            "id": "num_threads",
+            "name": "Number of threads",
+            "value": "4",
+            "value_name": "4 threads"
+          },
+          {
+            "id": "preset",
+            "name": "",
+            "value": "1005",
+            "value_name": ""
+          },
+          {
+            "id": "i_type",
+            "name": "",
+            "value": "Uint8",
+            "value_name": ""
+          },
+          {
+            "id": "o_type",
+            "name": "",
+            "value": "Float32",
+            "value_name": ""
+          },
+          {
+            "id": "extension",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          },
+          {
+            "id": "lazy_mode",
+            "name": "",
+            "value": "true",
+            "value_name": ""
+          }
+        ]
+      },
+      "backend_info": {
+        "filename": "libsamsungbackend",
+        "vendor_name": "samsung",
+        "backend_name": "samsung",
+        "accelerator_name": "samsung npu"
+      },
+      "performance_run": {
+        "throughput": {
+          "value": 4364.868050038847
+        },
+        "accuracy": null,
+        "accuracy2": null,
+        "dataset": {
+          "name": "Open images subset for classification",
+          "type": "IMAGENET",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v0_7/datasets/imagenet.zip",
+          "groundtruth_path": ""
+        },
+        "measured_duration": 60.95590591430664,
+        "measured_samples": 265010,
+        "start_datetime": "2024-04-05T16:21:47.251976",
+        "loadgen": {
+          "query_count": 265010,
+          "latency_mean": 0.000225646,
+          "latency90": 0.000229102,
+          "is_min_duration_met": true,
+          "is_min_query_met": true,
+          "is_early_stopping_met": true,
+          "is_result_valid": true
+        }
+      },
+      "accuracy_run": {
+        "throughput": null,
+        "accuracy": {
+          "normalized": 0.7563599944114685,
+          "formatted": "75.64%"
+        },
+        "accuracy2": null,
+        "dataset": {
+          "name": "Imagenet classification validation set",
+          "type": "IMAGENET",
+          "data_path": "local:///mlperf_datasets/imagenet/img",
+          "groundtruth_path": "local:///mlperf_datasets/imagenet/imagenet_val_full.txt"
+        },
+        "measured_duration": 409.1603698730469,
+        "measured_samples": 50000,
+        "start_datetime": "2024-04-05T16:55:26.563315",
+        "loadgen": null
+      },
+      "min_duration": 60.0,
+      "min_samples": 1024
+    },
+    {
+      "benchmark_id": "image_classification_offline",
+      "benchmark_name": "Image Classification (Offline)",
+      "loadgen_scenario": "Offline",
+      "backend_settings": {
+        "accelerator_code": "samsung_npu",
+        "accelerator_desc": "npu",
+        "framework": "ENN",
+        "delegate": "ENN_NPU",
+        "model_path": "local:///MLPerf_sideload/ic_offline.nnc",
+        "batch_size": 6144,
+        "extra_settings": [
+          {
+            "id": "num_threads",
+            "name": "Number of threads",
+            "value": "4",
+            "value_name": "4 threads"
+          },
+          {
+            "id": "scenario",
+            "name": "",
+            "value": "offline",
+            "value_name": ""
+          },
+          {
+            "id": "preset",
+            "name": "",
+            "value": "1003",
+            "value_name": ""
+          },
+          {
+            "id": "i_type",
+            "name": "",
+            "value": "Uint8",
+            "value_name": ""
+          },
+          {
+            "id": "o_type",
+            "name": "",
+            "value": "Float32",
+            "value_name": ""
+          },
+          {
+            "id": "extension",
+            "name": "",
+            "value": "false",
+            "value_name": ""
+          },
+          {
+            "id": "lazy_mode",
+            "name": "",
+            "value": "false",
+            "value_name": ""
+          }
+        ]
+      },
+      "backend_info": {
+        "filename": "libsamsungbackend",
+        "vendor_name": "samsung",
+        "backend_name": "samsung",
+        "accelerator_name": "samsung npu"
+      },
+      "performance_run": {
+        "throughput": {
+          "value": 6246.796464285952
+        },
+        "accuracy": null,
+        "accuracy2": null,
+        "dataset": {
+          "name": "Open images subset for classification",
+          "type": "IMAGENET",
+          "data_path": "https://github.com/mlcommons/mobile_models/raw/main/v0_7/datasets/imagenet.zip",
+          "groundtruth_path": ""
+        },
+        "measured_duration": 4.431858062744141,
+        "measured_samples": 24576,
+        "start_datetime": "2024-04-05T16:27:49.438947",
+        "loadgen": {
+          "query_count": 1,
+          "latency_mean": 3.934176524,
+          "latency90": 3.934176524,
+          "is_min_duration_met": true,
+          "is_min_query_met": true,
+          "is_early_stopping_met": true,
+          "is_result_valid": true
+        }
+      },
+      "accuracy_run": {
+        "throughput": null,
+        "accuracy": {
+          "normalized": 0.7563599944114685,
+          "formatted": "75.64%"
+        },
+        "accuracy2": null,
+        "dataset": {
+          "name": "Imagenet classification validation set",
+          "type": "IMAGENET",
+          "data_path": "local:///mlperf_datasets/imagenet/img",
+          "groundtruth_path": "local:///mlperf_datasets/imagenet/imagenet_val_full.txt"
+        },
+        "measured_duration": 414.0915222167969,
+        "measured_samples": 98304,
+        "start_datetime": "2024-04-05T17:02:19.962454",
+        "loadgen": null
+      },
+      "min_duration": 0.0,
+      "min_samples": 24576
+    }
+  ],
+  "environment_info": {
+    "platform": "android",
+    "value": {
+      "android": {
+        "os_version": "UP1A.231005.007.S921NKSU1AWM9",
+        "manufacturer": "samsung",
+        "model_code": "SM-S921N",
+        "model_name": "SM-S921N",
+        "board_code": "s5e9945",
+        "proc_cpuinfo_soc_name": "Unknown",
+        "props": [
+          {
+            "type": "socName",
+            "name": "ro.soc.model",
+            "value": "s5e9945"
+          },
+          {
+            "type": "socManufacturer",
+            "name": "ro.soc.manufacturer",
+            "value": "Samsung"
+          }
+        ]
+      },
+      "ios": null,
+      "windows": null
+    }
+  },
+  "build_info": {
+    "version": "4.0.0",
+    "build_number": "1",
+    "build_date": "2024-04-05T15:43:53.369932",
+    "official_release_flag": false,
+    "dev_test_flag": false,
+    "backend_list": [
+      "libsamsungbackend",
+      "libtflitebackend"
+    ],
+    "git_branch": "HEAD",
+    "git_commit": "f008ece19b439bd65b011c56c800d62141830a12",
+    "git_dirty_flag": true
+  }
+}
